@@ -1,9 +1,8 @@
 const navItems = [
   { label: "소개", targetId: "hero" },
   { label: "경험", targetId: "experience" },
-  { label: "프로젝트", targetId: "projects" },
+  { label: "프로젝트", targetId: "portfolio-timeline" },
   { label: "기술", targetId: "skills" },
-  { label: "포트폴리오", targetId: "portfolio-md" },
   { label: "연락", targetId: "contact" },
 ];
 

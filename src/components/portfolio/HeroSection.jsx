@@ -3,7 +3,7 @@ import { PrimaryButton, SecondaryButton } from "../common/Buttons";
 import { portfolioLinks } from "../../data/portfolioData";
 
 function scrollToProjects() {
-  const section = document.getElementById("projects");
+  const section = document.getElementById("portfolio-timeline");
   if (!section) return;
 
   section.scrollIntoView({

@@ -3,7 +3,7 @@ import PortfolioTimelineItem from "./PortfolioTimelineItem";
 
 export default function PortfolioTimelineSection({ meta, projects }) {
   return (
-    <section id="portfolio-md" className="mx-auto max-w-7xl space-y-10 px-6 py-16">
+    <section id="portfolio-timeline" className="mx-auto max-w-7xl space-y-10 px-6 py-16">
         <FadeInUp>
                   <div className="space-y-3">
         <p className="text-sm font-medium text-slate-500">Markdown Portfolio</p>
