@@ -67,9 +67,12 @@ export default function PortfolioTimelineItem({ project, isLatest = false }) {
               </div>
             )}
 
-            <Block title="프로젝트 목적" items={project.purpose} />
-            <Block title="개발 내용" items={project.development} />
-            <Block title="성과" items={project.result} />
+            {project.summary && (
+              <p className="text-base leading-8 text-slate-600">
+                {project.summary}
+              </p>
+            )}
+            <Block title="주요 역할" items={project.responsibilities} />
           </div>
 
           <div className="mt-8 flex justify-end">

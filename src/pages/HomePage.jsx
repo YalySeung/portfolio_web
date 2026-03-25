@@ -1,28 +1,40 @@
 import { useMemo } from "react";
 import Header from "../components/layout/Header";
 import HeroSection from "../components/portfolio/HeroSection";
-import ExperienceSection from "../components/portfolio/ExperienceSection";
+import ProfileSection from "../components/portfolio/ProfileSection";
 import SkillsSection from "../components/portfolio/SkillsSection";
 import CtaSection from "../components/portfolio/CtaSection";
 import PortfolioTimelineSection from "../components/portfolio/PortfolioTimelineSection";
-import { parsePortfolioMarkdown } from "../data/parsePortfolioMarkdown";
-import portfolioMarkdown from "../assets/Career.md?raw";
+import { parseSkillsMarkdown } from "../data/parseSkillsMarkdown";
+import { parseProfileMarkdown } from "../data/parseProfileMarkdown";
+import { parseProjectsMarkdown } from "../data/parseProjectsMarkdown";
+import domainMarkDown from "../assets/domain_pub.md?raw";
+import profileMarkDown from "../assets/profile_pub.md?raw";
+import projectMarkDown from "../assets/projects_pub.md?raw";
 
 export default function HomePage() {
-  const portfolioData = useMemo(() => {
-    return parsePortfolioMarkdown(portfolioMarkdown);
+  const domainData = useMemo(() => {
+    return parseSkillsMarkdown(domainMarkDown);
+  }, []);
+
+  const profileData = useMemo(() => {
+    return parseProfileMarkdown(profileMarkDown);
+  }, []);
+
+  const projectData = useMemo(() => {
+    return parseProjectsMarkdown(projectMarkDown);
   }, []);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <Header />
       <HeroSection />
-      <ExperienceSection />
+      <ProfileSection profile={profileData} />
+      <SkillsSection categories={domainData.categories} />
       <PortfolioTimelineSection
-        meta={portfolioData.meta}
-        projects={portfolioData.projects}
+        meta={projectData.meta}
+        projects={projectData.projects}
       />
-      <SkillsSection />
       <CtaSection />
     </div>
   );
