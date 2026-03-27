@@ -1,5 +1,5 @@
 import { SecondaryButton } from "../common/Buttons";
-import { portfolioLinks } from "../../data/portfolioData";
+import { contactLinks } from "../../data/contact";
 
 export default function CtaSection() {
   return (
@@ -17,7 +17,7 @@ export default function CtaSection() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href={portfolioLinks.github}
+                href={contactLinks.github}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-2xl bg-white px-5 py-3 text-sm font-medium text-slate-900 transition hover:bg-slate-100"
@@ -25,7 +25,7 @@ export default function CtaSection() {
                 GitHub
               </a>
 
-              <a href={portfolioLinks.blog} target="_blank" rel="noreferrer">
+              <a href={contactLinks.blog} target="_blank" rel="noreferrer">
                 <SecondaryButton dark>Blog</SecondaryButton>
               </a>
             </div>

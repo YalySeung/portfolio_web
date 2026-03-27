@@ -1,6 +1,6 @@
 import ContentCard from "../common/ContentCard";
 import { PrimaryButton, SecondaryButton } from "../common/Buttons";
-import { portfolioLinks } from "../../data/portfolioData";
+import { contactLinks } from "../../data/contact";
 
 function scrollToProjects() {
   const section = document.getElementById("portfolio-timeline");
@@ -18,12 +18,14 @@ export default function HeroSection() {
       <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:py-24 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
         <div className="space-y-6">
           <span className="inline-flex rounded-full bg-slate-100 px-4 py-1 text-sm font-medium text-slate-700">
-            Backend Portfolio
+            Backend Developer
           </span>
 
           <div className="space-y-4">
             <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-6xl">
-              여러 도메인을 연결해
+              여러 도메인의
+              <br />
+              이해를 바탕으로
               <br />
               더 나은 시스템을 만드는
               <br />
@@ -31,9 +33,9 @@ export default function HeroSection() {
             </h1>
 
             <p className="max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
-              Spring Boot 기반 API 설계, 데이터 모델링, 운영 안정성, 파일 처리,
-              인증 구조, React 연동까지 실무형 시스템을 구축해온 경험을 정리한
-              포트폴리오 사이트입니다.
+              Spring Boot 기반 API 설계와 데이터 모델링을 중심으로, 인증
+              구조·파일 처리·React 연동까지 아우르며 실무 환경에서 안정적으로
+              운영 가능한 시스템을 구축해온 백엔드 개발자입니다.
             </p>
           </div>
 
@@ -42,36 +44,38 @@ export default function HeroSection() {
               <PrimaryButton>프로젝트 보기</PrimaryButton>
             </div>
 
-            <a href={portfolioLinks.email}>
+            <a href={contactLinks.email}>
               <SecondaryButton>연락하기</SecondaryButton>
             </a>
-          </div>
-
-          <div className="flex flex-wrap gap-6 text-sm text-slate-500">
-            <div>Spring Boot</div>
-            <div>JPA / Querydsl</div>
-            <div>React / Tailwind</div>
           </div>
         </div>
 
         <ContentCard className="p-8">
-          <h3 className="text-xl font-bold">사이트 구성 제안</h3>
           <div className="mt-6 space-y-4 text-base md:text-lg leading-8 text-slate-600">
             <div>
-              <p className="font-semibold text-slate-900">1. 소개</p>
-              <p>한 줄 슬로건, 핵심 기술, 이력서 / GitHub / 연락 링크</p>
+              <p className="font-semibold text-slate-900">👤 소개</p>
+              <p>
+                다양한 산업에서 백엔드 시스템을 설계하고 성능 개선을 수행해온
+                백엔드 개발자입니다.
+              </p>
             </div>
             <div>
-              <p className="font-semibold text-slate-900">2. 프로젝트</p>
-              <p>프로젝트 카드, 담당 역할, 기술스택, 문제 해결 포인트</p>
+              <p className="font-semibold text-slate-900">💡 강점</p>
+              <p>- 비동기 처리 기반 성능 개선 경험</p>
+              <p>- JPA 마이그레이션을 통한 구조 개선</p>
+              <p>- 다수 시스템 연동 API 설계 경험</p>
             </div>
             <div>
-              <p className="font-semibold text-slate-900">3. 기술 스택</p>
-              <p>백엔드 / 프론트 / 인프라를 구분하여 실무 역량 강조</p>
+              <p className="font-semibold text-slate-900">🛠 문제해결</p>
+              <p>- OCR 결과 집계 성능 병목 해결</p>
+              <p>- 다중 DB 대응 구조 개선 (MyBatis → JPA)</p>
+              <p>- RPA 운영 자동화 및 배포 구조 개선</p>
             </div>
             <div>
-              <p className="font-semibold text-slate-900">4. 확장 포인트</p>
-              <p>Spring Boot API와 연결해 관리형 포트폴리오로 확장 가능</p>
+              <p className="font-semibold text-slate-900">🚀 방향성</p>
+              <p>- 확장 가능한 구조 설계</p>
+              <p>- 운영 안정성 개선</p>
+              <p>- 자동화 및 효율화 중심 개발</p>
             </div>
           </div>
         </ContentCard>

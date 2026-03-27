@@ -69,7 +69,7 @@ export default function ProfileSection({ profile }) {
       <SectionTitle
         eyebrow="Profile"
         title="프로필"
-        description="기술 기반, 회사 경력, 학력 및 자격 정보를 정리했습니다."
+        description="회사 경력, 학력 및 자격 정보를 정리했습니다."
       />
 
       <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
