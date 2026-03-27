@@ -6,6 +6,7 @@ import {
   normalizeProjectId,
 } from "../data/parseProjectsMarkdown";
 import { useNavigate } from "react-router-dom";
+import { transformProjects } from "../data/transformProjects";
 
 function Badge({ children, dark = false }) {
   return (
@@ -298,10 +299,11 @@ export default function ProjectDetailPage() {
   const { id } = useParams();
 
   const { projects } = parseProjectsMarkdown(projectsMarkdown);
+  const viewProjects = transformProjects(projects);
 
   const routeId = normalizeProjectId(decodeURIComponent(id ?? ""));
 
-  const project = projects.find(
+  const project = viewProjects.find(
     (item) => normalizeProjectId(item.id) === routeId,
   );
 

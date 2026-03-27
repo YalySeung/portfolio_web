@@ -8,6 +8,7 @@ import PortfolioTimelineSection from "../components/portfolio/PortfolioTimelineS
 import { parseSkillsMarkdown } from "../data/parseSkillsMarkdown";
 import { parseProfileMarkdown } from "../data/parseProfileMarkdown";
 import { parseProjectsMarkdown } from "../data/parseProjectsMarkdown";
+import { transformProjects } from "../data/transformProjects";
 import domainMarkDown from "../assets/domain_pub.md?raw";
 import profileMarkDown from "../assets/profile_pub.md?raw";
 import projectMarkDown from "../assets/projects_pub.md?raw";
@@ -22,7 +23,9 @@ export default function HomePage() {
   }, []);
 
   const projectData = useMemo(() => {
-    return parseProjectsMarkdown(projectMarkDown);
+    const { projects } = parseProjectsMarkdown(projectMarkDown);
+    const viewProjects = transformProjects(projects);
+    return viewProjects;
   }, []);
 
   return (
@@ -32,8 +35,7 @@ export default function HomePage() {
       <ProfileSection profile={profileData} />
       <SkillsSection categories={domainData.categories} />
       <PortfolioTimelineSection
-        meta={projectData.meta}
-        projects={projectData.projects}
+        projects={projectData}
       />
       <CtaSection />
     </div>
