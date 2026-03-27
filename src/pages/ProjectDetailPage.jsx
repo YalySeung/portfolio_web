@@ -5,6 +5,7 @@ import {
   parseProjectsMarkdown,
   normalizeProjectId,
 } from "../data/parseProjectsMarkdown";
+import { useNavigate } from "react-router-dom";
 
 function Badge({ children, dark = false }) {
   return (
@@ -134,15 +135,17 @@ function ProblemSolvingSection({ items = [] }) {
 }
 
 function ProjectHero({ project }) {
+  const navigate = useNavigate();
   return (
     <section className="border-b border-slate-200 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-10 md:py-14">
-        <Link
-          to="/"
+        <button
+          type="button"
+          onClick={() => navigate(-1)}
           className="inline-flex items-center rounded-xl border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
         >
           ← 홈으로
-        </Link>
+        </button>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_260px]">
           <div className="space-y-6">
@@ -158,7 +161,8 @@ function ProjectHero({ project }) {
               </h1>
 
               <p className="max-w-4xl text-base leading-8 text-slate-600 md:text-lg">
-                {project.summary || "프로젝트 요약 정보가 아직 정리되지 않았습니다."}
+                {project.summary ||
+                  "프로젝트 요약 정보가 아직 정리되지 않았습니다."}
               </p>
             </div>
 
@@ -257,8 +261,8 @@ function SummaryPanel({ project }) {
       <div className="rounded-3xl border border-slate-200 bg-slate-900 p-6 text-white shadow-sm">
         <h2 className="text-lg font-bold">포인트</h2>
         <p className="mt-3 text-base leading-8 text-slate-300">
-          이 페이지는 md 파일을 파싱한 데이터를 기반으로 렌더링됩니다.
-          내용을 갱신하면 UI도 함께 반영됩니다.
+          이 페이지는 md 파일을 파싱한 데이터를 기반으로 렌더링됩니다. 내용을
+          갱신하면 UI도 함께 반영됩니다.
         </p>
       </div>
     </aside>
@@ -266,15 +270,18 @@ function SummaryPanel({ project }) {
 }
 
 function EmptyState() {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-slate-50 px-6 py-16 text-slate-900">
       <div className="mx-auto max-w-4xl space-y-6">
-        <Link
-          to="/"
+        <button
+          type="button"
+          onClick={() => navigate(-1)}
           className="inline-flex items-center rounded-xl border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
         >
           ← 홈으로
-        </Link>
+        </button>
 
         <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <h1 className="text-3xl font-bold">프로젝트를 찾을 수 없습니다.</h1>
