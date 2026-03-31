@@ -259,13 +259,13 @@ function SummaryPanel({ project }) {
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-slate-900 p-6 text-white shadow-sm">
+      {/* <div className="rounded-3xl border border-slate-200 bg-slate-900 p-6 text-white shadow-sm">
         <h2 className="text-lg font-bold">포인트</h2>
         <p className="mt-3 text-base leading-8 text-slate-300">
           이 페이지는 md 파일을 파싱한 데이터를 기반으로 렌더링됩니다. 내용을
           갱신하면 UI도 함께 반영됩니다.
         </p>
-      </div>
+      </div> */}
     </aside>
   );
 }
