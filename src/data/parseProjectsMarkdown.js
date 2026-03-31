@@ -2,6 +2,14 @@ function cleanLine(line) {
   return line.replace(/\r/g, "").trim();
 }
 
+function convertHighlightSyntax(text = "") {
+  return text.replace(/==(.+?)==/g, "<mark>$1</mark>");
+}
+
+function cleanContentValue(line) {
+  return convertHighlightSyntax(line.replace(/^- /, "").trim());
+}
+
 export function normalizeProjectId(value = "") {
   return value
     .toString()
@@ -133,7 +141,7 @@ export function parseProjectsMarkdown(markdown) {
         continue;
       }
 
-      const value = line.replace(/^- /, "").trim();
+      const value = cleanContentValue(line);
 
       if (currentSection === "프로젝트 개요") {
         currentProject.overview.push(value);

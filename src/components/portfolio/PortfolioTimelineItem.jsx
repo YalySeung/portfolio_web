@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { renderHtml } from "../../data/renderHtml";
 
 function Block({ title, items }) {
   if (!items || items.length === 0) return null;
@@ -69,7 +70,7 @@ export default function PortfolioTimelineItem({ project, isLatest = false }) {
 
             {project.summary && (
               <p className="text-base leading-8 text-slate-600">
-                {project.summary}
+                {renderHtml(project.summary)}
               </p>
             )}
             <Block title="주요 역할" items={project.responsibilities} />

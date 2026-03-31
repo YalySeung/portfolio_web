@@ -7,6 +7,7 @@ import {
 } from "../data/parseProjectsMarkdown";
 import { useNavigate } from "react-router-dom";
 import { transformProjects } from "../data/transformProjects";
+import { renderHtml } from "../data/renderHtml";
 
 function Badge({ children, dark = false }) {
   return (
@@ -51,7 +52,7 @@ function SectionCard({ title, items = [], tone = "default" }) {
                 {index + 1}
               </div>
               <p className="text-base leading-8 text-slate-700 md:text-lg">
-                {item}
+                {renderHtml(item)}
               </p>
             </div>
           </div>
@@ -99,7 +100,7 @@ function ProblemSolvingCard({ item, index }) {
                   key={`${block.label}-${idx}-${content}`}
                   className="text-sm leading-7 text-slate-700 md:text-base"
                 >
-                  - {content}
+                  - {renderHtml(content)}
                 </li>
               ))}
             </ul>
@@ -162,7 +163,7 @@ function ProjectHero({ project }) {
               </h1>
 
               <p className="max-w-4xl text-base leading-8 text-slate-600 md:text-lg">
-                {project.summary ||
+                {renderHtml(project.summary) ||
                   "프로젝트 요약 정보가 아직 정리되지 않았습니다."}
               </p>
             </div>
@@ -317,10 +318,7 @@ export default function ProjectDetailPage() {
 
       <main className="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:py-14 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="space-y-10">
-          <FadeInUp delay={0.05}>
-            <SectionCard title="프로젝트 개요" items={project.overview} />
-          </FadeInUp>
-
+          
           <FadeInUp delay={0.12}>
             <SectionCard
               title="주요 역할"
