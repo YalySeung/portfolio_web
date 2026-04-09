@@ -23,19 +23,17 @@ export default function HeroSection() {
 
           <div className="space-y-4">
             <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-6xl">
-              여러 도메인의
+              정리와 구조화를 통해
               <br />
-              이해를 바탕으로
-              <br />
-              더 나은 시스템을 만드는
+              더 나은 협업을 만드는
               <br />
               백엔드 개발자
             </h1>
-
             <p className="max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
-              Spring Boot 기반 API 설계와 데이터 모델링을 중심으로, 인증
-              구조·파일 처리·React 연동까지 아우르며 실무 환경에서 안정적으로
-              운영 가능한 시스템을 구축해온 백엔드 개발자입니다.
+              옵시디언을 활용해 기술과 프로젝트 경험을 체계적으로 정리하고, 이를
+              기반으로 복잡한 시스템 흐름을 구조화하여 공유합니다. 정리된 구조를
+              바탕으로 개발자와 현업 모두가 이해할 수 있는 형태로 소통하며, 협업
+              효율을 높이는 개발을 지향합니다.
             </p>
           </div>
 
@@ -55,8 +53,8 @@ export default function HeroSection() {
             <div>
               <p className="font-semibold text-slate-900">👤 소개</p>
               <p>
-                다양한 산업에서 백엔드 시스템을 설계하고 성능 개선을 수행해온
-                백엔드 개발자입니다.
+                복잡한 시스템과 요구사항을 정리하고 구조화하여, 개발자와 현업 간
+                원활한 소통을 만드는 백엔드 개발자입니다.
               </p>
             </div>
             <div>
